@@ -43,7 +43,12 @@
         newstring = newstring.replace('%ccplaceholder%', newy)
 
         document.getElementById('addcomment').getElementsByClassName('mod-content')[0].style.display = 'block'
-        document.getElementById('comment-wiki-edit').getElementsByClassName('wiki-textfield')[0].innerHTML = newstring
+        if (document.getElementById('comment-wiki-edit').getElementsByClassName('wiki-textfield')[0].innerHTML == "")
+        {
+            document.getElementById('comment-wiki-edit').getElementsByClassName('wiki-textfield')[0].innerHTML = newstring
+        } else {
+            alert('Clear comment box before replying again.')
+        }
 
         document.getElementById('comment-wiki-edit').getElementsByClassName('wiki-textfield')[0].focus().scrollIntoView()
     }
